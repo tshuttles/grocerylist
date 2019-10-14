@@ -37,4 +37,16 @@ class ItemsController < ApplicationController
         end 
     end 
 
+    get '/items/:id/edit' do 
+        if logged_in? 
+            @item = Item.find_by_id(params[:id]) 
+            if @item.user_id == session[:user_id] 
+                erb :'items/edit' 
+            else 
+                redirect '/items' 
+            end
+        end
+    end 
+
+    
 end 
