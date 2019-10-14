@@ -63,12 +63,12 @@ class ItemsController < ApplicationController
 
     delete '/items/:id' do 
         @item = Item.find_by_id(params[:id]) 
-        if @item.user_id 
+        if @item.user_id == session[:user_id] 
             @item.delete 
             redirect "/items" 
         else 
             redirect "/items/#{@item.id}"
         end 
     end 
-    
+
 end 
