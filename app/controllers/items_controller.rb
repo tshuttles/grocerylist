@@ -61,4 +61,14 @@ class ItemsController < ApplicationController
         end 
     end 
 
+    delete '/items/:id' do 
+        @item = Item.find_by_id(params[:id]) 
+        if @item.user_id 
+            @item.delete 
+            redirect "/items" 
+        else 
+            redirect "/items/#{@item.id}"
+        end 
+    end 
+    
 end 
