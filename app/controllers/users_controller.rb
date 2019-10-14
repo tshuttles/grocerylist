@@ -12,7 +12,7 @@ class UsersController < ApplicationController
         if params[:username] == "" || params[:password] == "" || !!existing_user?(params[:username]) 
             redirect "/signup" 
         else 
-            user = User.create(username: params[:username], password: params[:password])
+            user = User.create(params)
             session[:user_id] = user.id 
             redirect "/items" 
         end 

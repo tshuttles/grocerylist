@@ -25,9 +25,9 @@ class ApplicationController < Sinatra::Base
     def existing_user?(username) 
       user = User.find_by(username: username) 
       if user 
-        true 
+        return true 
       else 
-        false 
+        return false 
       end 
     end 
   end 
