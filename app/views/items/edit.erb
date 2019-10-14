@@ -1,10 +1,10 @@
 <h2>Edit Item</h2>
 
-<form action="/items/<%= @item.id %>" method="POST">
+<form action="/items/<%= @item.id %>" method="post">
   <input type="hidden" name="_method" value="PATCH">
   <h3>Instructions: </h3>
   <p>Type below to edit the name of the item</p>
-  <label>Item:  </label>
+  <label>Item: </label>
   <input type="text" name="content" value="<%= @item.content %>">
   <br>
   <br>
