@@ -17,4 +17,15 @@ class ItemsController < ApplicationController
         end 
     end 
 
+    post '/items' do 
+        if params[:content] == "" 
+            redirect '/items/new' 
+        else 
+            item = Item.create(content: params[:content]) 
+            item.user_id = current_user.id 
+            item.save
+            redirect '/items' 
+        end 
+    end 
+    
 end 
