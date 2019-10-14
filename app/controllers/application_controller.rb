@@ -30,7 +30,6 @@ class ApplicationController < Sinatra::Base
         false 
       end 
     end 
-    
   end 
 
 end

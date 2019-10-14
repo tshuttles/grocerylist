@@ -5,7 +5,7 @@ class ItemsController < ApplicationController
             @items = current_user.items 
             erb :'/items/index' 
         else 
-            redirect '/login' 
+            redirect "/login" 
         end 
     end 
 
@@ -13,18 +13,18 @@ class ItemsController < ApplicationController
         if logged_in? 
             erb :'/items/new' 
         else 
-            redirect '/login' 
+            redirect "/login" 
         end 
     end 
 
     post '/items' do 
         if params[:content] == "" 
-            redirect '/items/new' 
+            redirect "/items/new" 
         else 
             item = Item.create(content: params[:content]) 
             item.user_id = current_user.id 
             item.save
-            redirect '/items' 
+            redirect "/items" 
         end 
     end 
     
@@ -33,7 +33,7 @@ class ItemsController < ApplicationController
             @item = Item.find_by(params[:id]) 
             erb :'/items/show' 
         else 
-            redirect '/login' 
+            redirect "/login" 
         end 
     end 
 
@@ -43,12 +43,22 @@ class ItemsController < ApplicationController
             if @item.user_id == session[:user_id] 
                 erb :'items/edit' 
             else 
-                redirect '/items' 
+                redirect "/items" 
             end
         else 
-            redirect '/login' 
+            redirect "/login" 
         end
     end 
 
-
+    patch '/items/:id' do 
+        @item = Item.find_by_id(params[:id]) 
+        if params[:content] == "" 
+            redirect "/items/#{@items.id}/edit"
+        else 
+            @item.content = params[:content] 
+            item.save 
+            redirect "/items/#{@item.id}" 
+        end 
+    end 
+    
 end 
