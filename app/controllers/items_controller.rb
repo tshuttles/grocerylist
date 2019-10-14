@@ -45,8 +45,10 @@ class ItemsController < ApplicationController
             else 
                 redirect '/items' 
             end
+        else 
+            redirect '/login' 
         end
     end 
 
-    
+
 end 
