@@ -56,9 +56,9 @@ class ItemsController < ApplicationController
             redirect "/items/#{@items.id}/edit"
         else 
             @item.content = params[:content] 
-            item.save 
+            @item.save 
             redirect "/items/#{@item.id}" 
         end 
     end 
-    
+
 end 
