@@ -1,0 +1,8 @@
+<h2>Your Grocery List</h2>
+<br>
+
+<ol type="1">
+  <% @items.each do |item| %>
+    <li><a href="items/<%= item.id %>"><%= item.content %></a></li>
+  <% end %>
+</ol>
