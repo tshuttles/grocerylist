@@ -1,4 +1,4 @@
-<h2>Edit Item</h2>
+<h2>Edit Grocery Item</h2>
 
 <form action="/items/<%= @item.id %>" method="post">
   <input type="hidden" name="_method" value="PATCH">
@@ -8,6 +8,6 @@
   <input type="text" name="content" value="<%= @item.content %>">
   <br>
   <br>
-  <input type="submit" value="EDIT" style="width: 70px; font-size:70px">
+  <input type="submit" value="Edit" style="width: 70px; font-size:70px">
   <br>
 </form> 

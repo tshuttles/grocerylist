@@ -19,10 +19,15 @@
         <%= yield %>
 
       <footer class="branding">
-        <small>&copy; 2019 <strong>Grocerylist</strong> 
+        <% if logged_in? %>
+          <a href="/items"><input type="submit" value="Home"></a>
+          <br>
+          <br>
+          <a href="/logout"><input type="submit" value="Logout"></a>
+        <% end %>
         <br>
-        <br> 
-        <input type="submit" value="Home" style="width: 70px; font-size:70px"></small> 
+        <br>
+        <small>&copy; 2019 <strong>Grocery List</strong></small>
       </footer>
     </div>
 

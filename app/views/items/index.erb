@@ -1,9 +1,9 @@
-<h2>Your Grocery List</h2>
+<h2>Your Groceries!</h2>
 <br>
 
 <ol type="1">
   <% @items.each do |item| %>
-    <li><a href="items/<%= item.id %>"><%= item.content %></a></li>
+    <li><a href="/items/<%=item.id%>"><%= item.content %></a></li>
   <% end %>
 </ol>
 
@@ -12,8 +12,7 @@
 <br>
 
 <footer>
-  <h4>OPTIONS</h4>
   <br>
-  <a href="/items/new">Create New Item</a>
+  <a href="/items/new">Add Another Item</a>
   <br>
 </footer>
