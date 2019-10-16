@@ -18,17 +18,17 @@
 
         <%= yield %>
 
-      <footer class="branding">
-        <% if logged_in? %>
-          <a href="/items"><input type="submit" value="Home"></a>
+        <footer class="branding">
+          <% if logged_in? %>
+            <a href="/items"><input type="submit" value="Home"></a>
+            <br>
+            <br>
+            <a href="/logout"><input type="submit" value="Logout"></a>
+          <% end %>
           <br>
           <br>
-          <a href="/logout"><input type="submit" value="Logout"></a>
-        <% end %>
-        <br>
-        <br>
-        <small>&copy; 2019 <strong>Grocery List</strong></small>
-      </footer>
+          <small>&copy; 2019 <strong>Grocery List</strong></small>
+        </footer>
     </div>
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
