@@ -18,6 +18,20 @@
 
         <%= yield %>
 
+        <style>
+        body {
+          background-color: steelblue;
+        }
+        p {
+          font-family: Tahoma, Geneva, sans-serif;
+        }
+        button { 
+          padding: 5px 5px;
+          display: inline-block;
+          font-size: 11px;
+        }
+        </style>
+
         <footer class="branding">
           <% if logged_in? %>
             <a href="/items"><input type="submit" value="Home"></a>
