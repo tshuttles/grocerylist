@@ -16,7 +16,10 @@ class ItemsController < ApplicationController
             redirect "/login" 
         end 
     end 
-
+    
+    #Project presentation question: 
+    #create a custom route that takes a user to a random item. 
+    #it doesn't have to be theirs!
     get '/items/random' do 
         @item = Item.all.sample
         @item 
@@ -76,8 +79,5 @@ class ItemsController < ApplicationController
             redirect "/items/#{@item.id}"
         end 
     end 
-
-    #create a custom route that takes a user to a random item. 
-    #it doesn't have to be theirs!
 
 end 
