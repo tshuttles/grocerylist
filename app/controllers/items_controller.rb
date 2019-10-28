@@ -17,6 +17,12 @@ class ItemsController < ApplicationController
         end 
     end 
 
+    get '/items/random' do 
+        @item = Item.all.sample
+        @item 
+        redirect "/items/#{@item.id}"
+    end
+
     post '/items' do 
         if params[:content] == "" 
             redirect "/items/new" 
@@ -70,5 +76,8 @@ class ItemsController < ApplicationController
             redirect "/items/#{@item.id}"
         end 
     end 
+
+    #create a custom route that takes a user to a random item. 
+    #it doesn't have to be theirs!
 
 end 
